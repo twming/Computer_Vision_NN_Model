@@ -1,5 +1,6 @@
 # Computer_Vision_NN_Model
-Create environment for image_classification 
+- The Raspberry Pi install on Bullseye 32 Bits, come with Python 3.9
+- Create environment for image_classification 
 ```
 cd ~
 mkdir imageclass
@@ -7,7 +8,7 @@ cd imageclass
 python -m venv  imageclassenv
 source imageclassenv/bin/activate
 ```
-Install dependancies
+- Install dependancies
 ```
 pip install numpy==1.20.0
 pip install opencv-python==4.5.3.56
