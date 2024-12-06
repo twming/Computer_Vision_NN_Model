@@ -90,6 +90,7 @@ git clone https://github.com/tensorflow/examples.git
 ```
 - Install packages dependencies
 ```
+pip install argparse
 pip install numpy==1.20.0
 pip install opencv-python==4.5.3.56
 pip install protobuf==3.20.3
@@ -98,7 +99,9 @@ pip install tflite-support==0.4.3
 ```
 - Setup and install the image classification model
 ``` 
-cd examples/lite/examples/image_classification/raspberry_pi/
+cd ~/cvision/examples/lite/examples/image_classification/raspberry_pi/
+rm requirements.txt
+touch requirements.txt
 sh setup.sh
 ````
 - Check the correct package lists installed
@@ -129,7 +132,7 @@ wheel          0.40.0
 ### Activity 3.5 Run Image Classification using Camera
 - Make sure are in raspberry pi directory, run below classify.py
 ```
-cd examples/lite/examples/image_classification/raspberry_pi/
+cd ~/cvision/examples/lite/examples/image_classification/raspberry_pi/
 sudo apt install libatlas-base-dev
 python classify.py
 ```
@@ -144,4 +147,50 @@ https://tfhub.dev/tensorflow/lite-model/mobilenet_v2_1.0_224/1/metadata/1
 python classify --model mobilenet_v2_1.0_224_1_metadata_1.tflite
 ```
 
-- Link: https://github.com/ultralytics/yolov5/tree/master
+## Topic 4: Object Detection
+
+### Activity 4.1 Object Detection
+- Setup object detection
+```
+cd ~/cvision/examples/lite/examples/object_detection/raspberry_pi/
+rm requirements.txt
+touch requirements.txt
+sh setup.sh
+```
+- run object detection
+```
+python detect.py
+```
+### Activity 4.2 YOLO Object Detection
+- Use back the Raspberry Pi 4, Bookworm in Activity 2.1
+```
+cd ~/yolo
+source yoloenv/bin/activate
+git clone https://github.com/ultralytics/yolov5
+pip install -r requirements.txt
+```
+- Run YOLO object detection
+```
+python detect.py --source 0
+```
+### Activity 4.3 YOLO 
+### Activity 4.4: Image Segmentation Setup
+```
+cd ~/csvision/examples/lite/examples/image_segmentation/raspberry_pi/
+rm requirements.txt
+touch requirements.txt
+sh setup.sh
+python segment.py
+```
+
+### Activity 4.5: Image Segmentation with MobileNetV2
+- Download MobileNetV2 Segmentation TFLite Model
+```
+https://tfhub.dev/sayakpaul/lite-model/mobilenetv2-dm05-coco/int8/1
+```
+- Run MobileNetV2 Segmentation
+```
+python segment.py --model lite-model_mobilenetv2-dm05-coco_int8_1.tflite
+```
+
+
