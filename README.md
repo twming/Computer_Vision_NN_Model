@@ -134,4 +134,14 @@ sudo apt install libatlas-base-dev
 python classify.py
 ```
 
+### Activity 3.6 MobileNet TFLite Model
+- Download MobileNet TFLite Model
+```
+https://tfhub.dev/tensorflow/lite-model/mobilenet_v2_1.0_224/1/metadata/1
+```
+- Copy the file to running folder first, run image classification using MobileNet model
+```
+python classify --model mobilenet_v2_1.0_224_1_metadata_1.tflite
+```
+
 - Link: https://github.com/ultralytics/yolov5/tree/master
