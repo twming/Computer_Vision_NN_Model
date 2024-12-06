@@ -173,7 +173,15 @@ pip install -r requirements.txt
 ```
 python detect.py --source 0
 ```
-### Activity 4.3 YOLO 
+### Activity 4.3 YOLO v5 TFLite Model 
+- Download YOLO v5 TFLite Model
+```
+https://tfhub.dev/neso613/lite-model/yolo-v5-tflite/tflite_model/1 
+```
+- Run YOLO v5
+```
+python detect.py --source 0 --weights lite-model_yolo-v5-tflite_tflite_model_1.tflite
+```
 ### Activity 4.4: Image Segmentation Setup
 ```
 cd ~/csvision/examples/lite/examples/image_segmentation/raspberry_pi/
