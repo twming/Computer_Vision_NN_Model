@@ -105,6 +105,7 @@ sh setup.sh
 ```
 pip list -l
 ```
+```
 Package        Version
 -------------- --------------
 absl-py        2.1.0
@@ -123,7 +124,7 @@ sounddevice    0.5.1
 tflite-runtime 2.13.0
 tflite-support 0.4.3
 wheel          0.40.0
-
+```
 
 ### Activity 3.5 Run Image Classification using Camera
 - Make sure are in raspberry pi directory, run below classify.py
