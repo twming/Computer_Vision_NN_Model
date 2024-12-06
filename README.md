@@ -1,7 +1,53 @@
 # Computer_Vision_NN_Model
+
+
 - The Raspberry Pi install on Bullseye 32 Bits, come with Python 3.9
+- Capture Video from Camera
+```
+import numpy as np
+import cv2 as cv
+
+cap = cv.VideoCapture(0)
+while True:
+    ret, frame = cap.read()
+    if not ret:
+        print("Can't receive frame (stream end?). Exiting ...")
+        break
+    gray = cv.cvtColor(frame, cv.COLOR_BGR2GRAY)
+    cv.imshow('frame', gray)
+    if cv.waitKey(1) == ord('q'):
+        break
+cap.release()
+cv.destroyAllWindows()
+```
+- Saving Video
+```
+import numpy as np
+import cv2 as cv
+cap = cv.VideoCapture(0)
+fourcc = cv.VideoWriter_fourcc(*'XVID')
+out = cv.VideoWriter('output.avi', fourcc, 20.0, (640,  480))
+
+while cap.isOpened():
+    ret, frame = cap.read()
+    frame = cv.flip(frame, 0)
+
+    out.write(frame)
+    cv.imshow('frame', frame)
+    if cv.waitKey(1) == ord('q'):
+        break
+
+cap.release()
+out.release()
+cv.destroyAllWindows()
+```
+
+
+
 - Link: https://github.com/tensorflow/examples/tree/master
 - Create environment for image_classification 
+
+
 ```
 cd ~
 mkdir imageclass
