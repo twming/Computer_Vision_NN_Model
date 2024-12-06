@@ -130,6 +130,7 @@ wheel          0.40.0
 - Make sure are in raspberry pi directory, run below classify.py
 ```
 cd examples/lite/examples/image_classification/raspberry_pi/
+sudo apt install libatlas-base-dev
 python classify.py
 ```
 
