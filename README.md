@@ -182,6 +182,7 @@ python detect.py
 cd ~/yolo
 source yoloenv/bin/activate
 git clone https://github.com/ultralytics/yolov5
+cd ~/yolo/yolov5
 pip install -r requirements.txt
 ```
 - Run YOLO object detection
