@@ -216,5 +216,19 @@ https://tfhub.dev/sayakpaul/lite-model/mobilenetv2-dm05-coco/int8/1
 ```
 python segment.py --model lite-model_mobilenetv2-dm05-coco_int8_1.tflite
 ```
-
-
+### Revision:
+- Classify Image:
+```
+classify_path=~/cvision/examples/lite/examples/image_classification/raspberry_pi/
+python $classify_path/classify.py --model mobilenet_v2_1.0_224_1_metadata_1.tflite 
+```
+- Object Detection:
+```
+detect_path=~/cvision/examples/lite/examples/object_detection/raspberry_pi/
+python $detect_path/detect.py
+```
+- Object Segmentation
+```
+segment_path=~/cvision/examples/lite/examples/image_segmentation/raspberry_pi/
+python $segment_path/segment.py --model lite-model_mobilenetv2-dm05-coco_int8_1.tflite
+```
