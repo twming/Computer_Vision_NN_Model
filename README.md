@@ -225,7 +225,7 @@ python $classify_path/classify.py --model mobilenet_v2_1.0_224_1_metadata_1.tfli
 - Object Detection:
 ```
 detect_path=~/cvision/examples/lite/examples/object_detection/raspberry_pi/
-python $detect_path/detect.py
+python $detect_path/detect.py --model $detect_path/efficientdet_lite0.tflite
 ```
 - Object Segmentation
 ```
