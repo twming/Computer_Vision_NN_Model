@@ -194,6 +194,10 @@ python detect.py --source 0
 ```
 https://tfhub.dev/neso613/lite-model/yolo-v5-tflite/tflite_model/1 
 ```
+- Install dependency
+```
+pip install tensorflow
+```
 - Run YOLO v5
 ```
 python detect.py --source 0 --weights lite-model_yolo-v5-tflite_tflite_model_1.tflite
