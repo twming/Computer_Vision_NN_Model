@@ -131,8 +131,6 @@ cffi           1.17.1
 flatbuffers    20181003210633
 numpy          1.20.0
 opencv-python  4.5.3.56
-picamera       1.13
-pip            24.3.1
 pkg_resources  0.0.0
 protobuf       3.20.3
 pybind11       2.13.6
@@ -141,7 +139,6 @@ setuptools     44.1.1
 sounddevice    0.5.1
 tflite-runtime 2.13.0
 tflite-support 0.4.3
-wheel          0.40.0
 ```
 
 ### Activity 3.5 Run Image Classification using Camera
