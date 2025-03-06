@@ -19,7 +19,6 @@ source cvisionenv/bin/activate
 - Open Thonny, save below code to "capture_video.py" 
 - Run the code "python capture_video.py" to capture video from camera
 ```
-import numpy as np
 import cv2 as cv
 
 cap = cv.VideoCapture(0)
