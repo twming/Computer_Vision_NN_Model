@@ -11,7 +11,7 @@
 cd ~
 mkdir cvision
 cd cvision
-python -m venv  cvisionenv
+python -m venv cvisionenv
 source cvisionenv/bin/activate
 ```
 
