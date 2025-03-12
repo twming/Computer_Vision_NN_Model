@@ -105,11 +105,11 @@ git clone https://github.com/tensorflow/examples.git
 - Install packages dependencies
 ```
 pip install argparse
-pip install numpy==1.20.0
 pip install opencv-python==4.5.3.56
 pip install protobuf==3.20.3
 pip install tflite-runtime==2.13.0
 pip install tflite-support==0.4.3
+pip install numpy==1.20.0
 ```
 - Setup and install the image classification model
 ``` 
