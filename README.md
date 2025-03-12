@@ -3,16 +3,21 @@
 ## Topic 2: Basic Computer Vision Techniques
 
 ### Activity 2.1: Raspberry Pi Installation
-- Install Raspberry Pi 4 Bullseye 32 Bits using Imager with Python 3.9
+- Install Raspberry Pi 4 Bookworm 64 Bits using Imager with Python 3.11
 
 ### Activity 2.2: Setup environment
-- Setup the computer vision (cvision) environment with opencv2
 ```
 cd ~
-mkdir cvision
-cd cvision
-python -m venv cvisionenv
-source cvisionenv/bin/activate
+mkdir yolo
+cd yolo
+python -m venv  yoloenv
+source yoloenv/bin/activate
+```
+- Install the requirements file
+```
+git clone https://github.com/ultralytics/yolov5  
+cd yolov5
+pip install -r requirements.txt
 ```
 
 ### Activity 2.3: Using OpenCV and Camera
@@ -79,21 +84,7 @@ cv2.destroyAllWindows()
 - https://teachablemachine.withgoogle.com/train/image
 
 ### Activity 3.2: Raspberry Pi Installation
-- Install Raspberry Pi 4 Bookworm 64 Bits using Imager with Python 3.11
-```
-cd ~
-mkdir yolo
-cd yolo
-python -m venv  yoloenv
-source yoloenv/bin/activate
-```
-- Install the requirements file
-```
-git clone https://github.com/ultralytics/yolov5  
-cd yolov5
-pip install -r requirements.txt
-```
-
+- Install Raspberry Pi 4 Bullseye 32 Bits using Imager with Python 3.9
 
 ### Activity 3.3: Setup environment
 - Setup the computer vision environment with opencv2
