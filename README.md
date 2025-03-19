@@ -200,7 +200,7 @@ python detect.py --source 0 --weights lite-model_yolo-v5-tflite_tflite_model_1.t
 ```
 ### Activity 4.4: Image Segmentation Setup
 ```
-cd ~/csvision/examples/lite/examples/image_segmentation/raspberry_pi/
+cd ~/cvision/examples/lite/examples/image_segmentation/raspberry_pi/
 rm requirements.txt
 touch requirements.txt
 sh setup.sh
