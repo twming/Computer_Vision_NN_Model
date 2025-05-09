@@ -42,8 +42,8 @@ cv.destroyAllWindows()
 - Open Thonny, save below code to "save_video.py" 
 - Run the code "python save_video.py" to save video from camera (output.avi)
 ```
-import numpy as np
 import cv2 as cv
+
 cap = cv.VideoCapture(0)
 fourcc = cv.VideoWriter_fourcc(*'XVID')
 out = cv.VideoWriter('output.avi', fourcc, 20.0, (640,  480))
