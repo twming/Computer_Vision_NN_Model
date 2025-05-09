@@ -11,7 +11,7 @@ cd ~
 mkdir yolo
 cd yolo
 python -m venv  yoloenv
-source yoloenv/bin/activate
+source ~/yolo/yoloenv/bin/activate
 ```
 - Install the requirements file
 ```
