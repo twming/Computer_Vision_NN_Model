@@ -93,7 +93,7 @@ cd ~
 mkdir cvision
 cd cvision
 python -m venv  cvisionenv
-source cvisionenv/bin/activate
+source ~/cvision/cvisionenv/bin/activate
 ```
 
 ### Activity 3.4 Image Classification
