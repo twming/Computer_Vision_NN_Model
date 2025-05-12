@@ -13,7 +13,7 @@
 - username/password: pi/pi (Require my password to log in)
 
 ### Activity: Configure Ubuntu and Environment
-- 
+- Install python 3.9
 ```
 sudo apt update
 sudo apt install -y software-properties-common
@@ -21,6 +21,17 @@ sudo add-apt-repository -y ppa:deadsnakes/ppa
 sudo apt update
 sudo apt install python3.9 python3.9-venv python3.12-venv python3.9-dev
 ```
+- Install XRDP remote access
+```
+sudo apt update && sudo apt upgrade -y
+sudo apt install ubuntu-gnome-desktop -y
+sudo apt install xrdp -y
+sudo adduser xrdp ssl-cert
+sudo ufw enable
+sudo ufw allow 3389/tcp
+sudo ufw reload
+```
+
 
 ### Activity 2.2: Setup environment
 ```
