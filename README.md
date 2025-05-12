@@ -22,10 +22,10 @@
 1. Login to RaspberryPi4/5, open terminal
 <img src="https://github.com/twming/Computer_Vision_NN_Model/blob/Pi5/img/terminal.png" alt="Terminal" width="500">
 
-2. install python 3.9
+2. Install python 3.9
 ```
 sudo apt update
-sudo apt install -y software-properties-common
+sudo apt install -y software-properties-common git curl
 sudo add-apt-repository -y ppa:deadsnakes/ppa
 sudo apt update
 sudo apt install -y python3.9 python3.9-venv python3.12-venv python3.9-dev
@@ -92,15 +92,52 @@ tflite-support 0.4.3
 git clone https://github.com/tensorflow/examples.git
 ```
 
+### Activity: Tensorflow Image Classification with EfficientNet
 
-
-- Setup and install the image classification model
+1. Setup and install the image classification model
 ``` 
-cd ~/cvision/examples/lite/examples/image_classification/raspberry_pi/
+cd ~/examples/lite/examples/image_classification/raspberry_pi/
+sh setup.sh
+````
+
+2. Connect your USB Camera and give the access permission to /dev/video0
+```
+sudo chmod 777 /dev/video0
+```
+
+3. Run Image Classification using Camera
+```
+python classify.py
+```
+
+### Activity: Tensorflow Image Classification with MobileNet
+1. Go to below link and download MobileNet model
+```
+https://tfhub.dev/tensorflow/lite-model/mobilenet_v2_1.0_224/1/metadata/1
+```
+2. Move the file (~/Dowload) to image_classification/raspberry_pi folder
+```
+mv ~/Download/1.tflite ~/examples/lite/examples/image_classification/raspberry_pi/mobilenet_v2_1.0_224_1_metadata_1.tflite
+```
+3. Run image classification using MobileNet model
+```
+python classify --model mobilenet_v2_1.0_224_1_metadata_1.tflite
+```
+
+## Topic 4: Object Detection
+
+### Activity 4.1 Object Detection
+- Setup object detection
+```
+cd ~/cvision/examples/lite/examples/object_detection/raspberry_pi/
 rm requirements.txt
 touch requirements.txt
 sh setup.sh
-````
+```
+- run object detection
+```
+python detect.py
+```
 
 
 
@@ -183,40 +220,7 @@ cv2.destroyAllWindows()
 
 
 
-### Activity 3.4 Image Classification
 
-### Activity 3.5 Run Image Classification using Camera
-- Make sure are in raspberry pi directory, run below classify.py
-```
-cd ~/cvision/examples/lite/examples/image_classification/raspberry_pi/
-sudo apt install libatlas-base-dev
-python classify.py
-```
-
-### Activity 3.6 MobileNet TFLite Model
-- Download MobileNet TFLite Model
-```
-https://tfhub.dev/tensorflow/lite-model/mobilenet_v2_1.0_224/1/metadata/1
-```
-- Copy the file to running folder first, run image classification using MobileNet model
-```
-python classify --model mobilenet_v2_1.0_224_1_metadata_1.tflite
-```
-
-## Topic 4: Object Detection
-
-### Activity 4.1 Object Detection
-- Setup object detection
-```
-cd ~/cvision/examples/lite/examples/object_detection/raspberry_pi/
-rm requirements.txt
-touch requirements.txt
-sh setup.sh
-```
-- run object detection
-```
-python detect.py
-```
 ### Activity 4.2 YOLO Object Detection
 - Use back the Raspberry Pi 4, Bookworm in Activity 2.1
 ```
