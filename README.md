@@ -94,7 +94,7 @@ git clone https://github.com/tensorflow/examples.git
 
 ### Activity: Tensorflow Image Classification with EfficientNet
 
-1. Setup and install the image classification model
+1. Setup and install the image classification EfficientNet model
 ``` 
 cd ~/examples/lite/examples/image_classification/raspberry_pi/
 sh setup.sh
@@ -111,6 +111,7 @@ python classify.py
 ```
 
 ### Activity: Tensorflow Image Classification with MobileNet
+
 1. Go to below link and download MobileNet model
 ```
 https://tfhub.dev/tensorflow/lite-model/mobilenet_v2_1.0_224/1/metadata/1
@@ -126,19 +127,47 @@ python classify.py --model mobilenet_v2_1.0_224_1_metadata_1.tflite
 
 ## Topic 4: Object Detection
 
-### Activity 4.1 Object Detection
-- Setup object detection
-```
-cd ~/cvision/examples/lite/examples/object_detection/raspberry_pi/
-rm requirements.txt
-touch requirements.txt
+### Activity: Tensorflow Object Detection with EfficientNet
+
+1. Setup and install the Object Detection EfficientNet model
+``` 
+cd ~/examples/lite/examples/object_detection/raspberry_pi/
 sh setup.sh
-```
-- run object detection
+````
+
+2. Run Object detection using Camera
 ```
 python detect.py
 ```
 
+### Activity: Tensorflow Image Segmentation with EfficientNet
+
+1. Setup and install the Object Detection EfficientNet model
+``` 
+cd ~/examples/lite/examples/image_segmentation/raspberry_pi/
+sh setup.sh
+````
+
+2. Run Image Segmentation using Camera
+```
+python segment.py
+```
+
+
+### Activity: Tensorflow Image Segmentation with MobileNetV2
+
+1. Go to below link and download MobileNetV2 model
+```
+https://tfhub.dev/sayakpaul/lite-model/mobilenetv2-dm05-coco/int8/1
+```
+2. Move the file (~/Dowload) to image_segmentation/raspberry_pi folder
+```
+mv ~/Downloads/1.tflite ~/examples/lite/examples/image_segmentation/raspberry_pi/lite-model_mobilenetv2-dm05-coco_int8_1.tflite
+```
+3. Run image segmentation using MobileNetV2 model
+```
+python segment.py --model lite-model_mobilenetv2-dm05-coco_int8_1.tflite
+```
 
 
 ### Activity: Setup Yolo Computer Vision Environment
@@ -212,7 +241,7 @@ while True:
 
 cv2.destroyAllWindows()
 ```
-## Topic 3: Image Classification
+
 
 ### Activity 3.1 Teachable Machine
 - Go to below link, train 2 different images, let the machine recognize them.
@@ -247,24 +276,11 @@ pip install tensorflow
 ```
 python detect.py --source 0 --weights lite-model_yolo-v5-tflite_tflite_model_1.tflite
 ```
-### Activity 4.4: Image Segmentation Setup
-```
-cd ~/cvision/examples/lite/examples/image_segmentation/raspberry_pi/
-rm requirements.txt
-touch requirements.txt
-sh setup.sh
-python segment.py
-```
 
-### Activity 4.5: Image Segmentation with MobileNetV2
-- Download MobileNetV2 Segmentation TFLite Model
-```
-https://tfhub.dev/sayakpaul/lite-model/mobilenetv2-dm05-coco/int8/1
-```
-- Run MobileNetV2 Segmentation
-```
-python segment.py --model lite-model_mobilenetv2-dm05-coco_int8_1.tflite
-```
+
+
+
+
 ### Revision:
 - Classify Image:
 ```
