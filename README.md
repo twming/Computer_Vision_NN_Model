@@ -117,7 +117,7 @@ https://tfhub.dev/tensorflow/lite-model/mobilenet_v2_1.0_224/1/metadata/1
 ```
 2. Move the file (~/Dowload) to image_classification/raspberry_pi folder
 ```
-mv ~/Download/1.tflite ~/examples/lite/examples/image_classification/raspberry_pi/mobilenet_v2_1.0_224_1_metadata_1.tflite
+mv ~/Downloads/1.tflite ~/examples/lite/examples/image_classification/raspberry_pi/mobilenet_v2_1.0_224_1_metadata_1.tflite
 ```
 3. Run image classification using MobileNet model
 ```
