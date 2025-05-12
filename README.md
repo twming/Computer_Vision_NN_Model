@@ -5,11 +5,11 @@
 ### Activity : Raspberry Pi Installation
 1. Go to https://www.raspberrypi.com/software/, download Raspberry Pi Imager.
 
-<img src="https://github.com/twming/Computer_Vision_NN_Model/tree/Pi5/img/rasp-imager-download.png" alt="ImagerDownload" width="600">
+<img src="https://github.com/twming/Computer_Vision_NN_Model/blob/Pi5/img/rasp-imager-download.png" alt="ImagerDownload" width="600">
 
 2. Install Ubuntu Desktop 24.04.2 LTS (64-Bit)
-<img src="https://github.com/twming/Computer_Vision_NN_Model/tree/Pi5/img/rasp-imager.png" alt="Imager" width="600">
-<img src="https://github.com/twming/Computer_Vision_NN_Model/tree/Pi5/img/rasp-ubuntu.png" alt="Ubuntu" width="600">
+<img src="https://github.com/twming/Computer_Vision_NN_Model/blob/Pi5/img/rasp-imager.png" alt="Imager" width="600">
+<img src="https://github.com/twming/Computer_Vision_NN_Model/blob/Pi5/img/rasp-ubuntu.png" alt="Ubuntu" width="600">
 3. System Configuration:
 
 - Language: English
