@@ -205,7 +205,7 @@ mv ~/Downloads/1.tflite ~/yolov5/lite-model_yolo-v5-tflite_tflite_model_1.tflite
 
 3. Run YOLO v5 model
 ```
-python detect.py --source 0 --weights lite-model_yolo-v5-tflite_tflite_model_1.tflite
+python detect.py --source 0 --weights lite-model_yolo-v5-tflite_tflite_model_1.tflite --imgsz 320
 ```
 
 
