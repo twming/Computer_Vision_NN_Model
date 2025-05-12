@@ -20,7 +20,8 @@
 
 ### Activity: Configure Ubuntu and Environment
 1. Login to RaspberryPi4/5, open terminal
-<img src="https://github.com/twming/Computer_Vision_NN_Model/blob/Pi5/img/terminal.png" alt="Terminal" width="300">
+<img src="https://github.com/twming/Computer_Vision_NN_Model/blob/Pi5/img/terminal.png" alt="Terminal" width="500">
+
 2. install python 3.9
 ```
 sudo apt update
@@ -29,7 +30,7 @@ sudo add-apt-repository -y ppa:deadsnakes/ppa
 sudo apt update
 sudo apt install -y python3.9 python3.9-venv python3.12-venv python3.9-dev
 ```
-2. Install XRDP remote access
+3. Install XRDP remote access
 ```
 sudo apt install -y ubuntu-gnome-desktop
 sudo apt install -y xrdp
@@ -45,21 +46,64 @@ sudo systemctl xrdp
 ```
 4. Reboot your Raspberry Pi
 
+
 ### Activity: Setup Tensorflow Computer Vision Environment
+1. Login to RaspberryPi4/5 (ip:xxx.xxx.xxx.xxx) using username/password (pi/pi)
 
-1. Go to Virtual box website and download the application, install in your laptop.
-```
-https://www.virtualbox.org/wiki/Downloads
-```
-<img src="https://github.com/twming/ros2_master_tutorial/blob/main/img/virtualbox.png" alt="Virtual Box" width="600">
+<img src="https://github.com/twming/Computer_Vision_NN_Model/blob/Pi5/img/remote_desktop.png" alt="RemoteDesktop" width="500">
 
-### Activity 2.2: Setup environment
+2. Open the terminal
+3. Create a py39 environment and activate it
 ```
 cd ~
-mkdir yolo
-cd yolo
-python -m venv  yoloenv
-source ~/yolo/yoloenv/bin/activate
+python3.9 -m venv  py39
+source ~/py39/bin/activate
+```
+4. Install packages dependencies
+```
+pip3 install argparse
+pip3 install opencv-python==4.5.3.56
+pip3 install protobuf==3.20.3
+pip3 install tflite-runtime==2.13.0
+pip3 install tflite-support==0.4.3
+pip3 install numpy==1.20.0
+```
+5. Check the correct package lists installed
+```
+pip list -l
+```
+```
+Package        Version
+-------------- --------------
+numpy          1.20.0
+opencv-python  4.5.3.56
+protobuf       3.20.3
+tflite-runtime 2.13.0
+tflite-support 0.4.3
+```
+6. Clone the Tensorflow Example repository
+```
+git clone https://github.com/tensorflow/examples.git
+```
+
+
+
+- Setup and install the image classification model
+``` 
+cd ~/cvision/examples/lite/examples/image_classification/raspberry_pi/
+rm requirements.txt
+touch requirements.txt
+sh setup.sh
+````
+
+
+
+### Activity: Setup Yolo Computer Vision Environment
+
+```
+cd ~
+python -m venv py312
+source ~/py312/bin/activate
 ```
 - Install the requirements file
 ```
@@ -131,62 +175,9 @@ cv2.destroyAllWindows()
 - Go to below link, train 2 different images, let the machine recognize them.
 - https://teachablemachine.withgoogle.com/train/image
 
-### Activity 3.2: Raspberry Pi Installation
-- Install Raspberry Pi 4 Bullseye 32 Bits using Imager with Python 3.9
 
-### Activity 3.3: Setup environment
-- Setup the computer vision environment with opencv2
-```
-cd ~
-mkdir cvision
-cd cvision
-python -m venv  cvisionenv
-source ~/cvision/cvisionenv/bin/activate
-```
 
 ### Activity 3.4 Image Classification
-- Download from tensorflow repository
-```
-sudo apt update
-git clone https://github.com/tensorflow/examples.git
-```
-- Install packages dependencies
-```
-pip install argparse
-pip install opencv-python==4.5.3.56
-pip install protobuf==3.20.3
-pip install tflite-runtime==2.13.0
-pip install tflite-support==0.4.3
-pip install numpy==1.20.0
-```
-- Setup and install the image classification model
-``` 
-cd ~/cvision/examples/lite/examples/image_classification/raspberry_pi/
-rm requirements.txt
-touch requirements.txt
-sh setup.sh
-````
-- Check the correct package lists installed
-```
-pip list -l
-```
-```
-Package        Version
--------------- --------------
-absl-py        2.1.0
-cffi           1.17.1
-flatbuffers    20181003210633
-numpy          1.20.0
-opencv-python  4.5.3.56
-pkg_resources  0.0.0
-protobuf       3.20.3
-pybind11       2.13.6
-pycparser      2.22
-setuptools     44.1.1
-sounddevice    0.5.1
-tflite-runtime 2.13.0
-tflite-support 0.4.3
-```
 
 ### Activity 3.5 Run Image Classification using Camera
 - Make sure are in raspberry pi directory, run below classify.py
