@@ -1,9 +1,19 @@
-# Computer_Vision_NN_Model
+# Computer Vision for Beginner
 
 ## Topic 2: Basic Computer Vision Techniques
 
-### Activity 2.1: Raspberry Pi Installation
-- Install Raspberry Pi 4 Bookworm 64 Bits using Imager with Python 3.11
+### Activity : Raspberry Pi Installation
+- Go to https://www.raspberrypi.com/software/, download Raspberry Pi Imager.
+- Install Ubuntu Desktop 24.04.2 LTS (64-Bit)
+- System Configuration:
+- Language: English
+- Keyboard Layout: English(US)
+- Wireless: SSID/Password
+- Country/Zone: Singapore
+- username/password: pi/pi (Require my password to log in)
+
+### Activity: Configure Ubuntu and Environment
+- login
 
 ### Activity 2.2: Setup environment
 ```
