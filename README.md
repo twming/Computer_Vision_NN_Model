@@ -3,9 +3,12 @@
 ## Topic 2: Basic Computer Vision Techniques
 
 ### Activity : Raspberry Pi Installation
-- Go to https://www.raspberrypi.com/software/, download Raspberry Pi Imager.
-- Install Ubuntu Desktop 24.04.2 LTS (64-Bit)
-- System Configuration:
+1. Go to https://www.raspberrypi.com/software/, download Raspberry Pi Imager.
+<img src="https://github.com/twming/Computer_Vision_NN_Model/blob/main/img/rasp-imager-download.png" alt="Virtual Box" width="600">
+2. Install Ubuntu Desktop 24.04.2 LTS (64-Bit)
+<img src="https://github.com/twming/Computer_Vision_NN_Model/blob/main/img/rasp-imager.png" alt="Virtual Box" width="600">
+<img src="https://github.com/twming/Computer_Vision_NN_Model/blob/main/img/rasp-ubuntu.png" alt="Virtual Box" width="600">
+3. System Configuration:
 - Language: English
 - Keyboard Layout: English(US)
 - Wireless: SSID/Password
@@ -13,25 +16,37 @@
 - username/password: pi/pi (Require my password to log in)
 
 ### Activity: Configure Ubuntu and Environment
-- Install python 3.9
+1. Install python 3.9
 ```
 sudo apt update
 sudo apt install -y software-properties-common
 sudo add-apt-repository -y ppa:deadsnakes/ppa
 sudo apt update
-sudo apt install python3.9 python3.9-venv python3.12-venv python3.9-dev
+sudo apt install -y python3.9 python3.9-venv python3.12-venv python3.9-dev
 ```
-- Install XRDP remote access
+2. Install XRDP remote access
 ```
-sudo apt update && sudo apt upgrade -y
-sudo apt install ubuntu-gnome-desktop -y
-sudo apt install xrdp -y
+sudo apt install -y ubuntu-gnome-desktop
+sudo apt install -y xrdp
 sudo adduser xrdp ssl-cert
 sudo ufw enable
 sudo ufw allow 3389/tcp
 sudo ufw reload
 ```
+3. Check the service is running and the port are allowed
+```
+sudo ufw status
+sudo systemctl xrdp
+```
+4. Reboot your Raspberry Pi
 
+### Activity: Setup Tensorflow Computer Vision Environment
+
+1. Go to Virtual box website and download the application, install in your laptop.
+```
+https://www.virtualbox.org/wiki/Downloads
+```
+<img src="https://github.com/twming/ros2_master_tutorial/blob/main/img/virtualbox.png" alt="Virtual Box" width="600">
 
 ### Activity 2.2: Setup environment
 ```
