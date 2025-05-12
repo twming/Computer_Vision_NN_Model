@@ -116,7 +116,7 @@ python classify.py
 ```
 https://tfhub.dev/tensorflow/lite-model/mobilenet_v2_1.0_224/1/metadata/1
 ```
-2. Move the file (~/Dowload) to image_classification/raspberry_pi folder
+2. Move the file (~/Dowloads) to image_classification/raspberry_pi folder
 ```
 mv ~/Downloads/1.tflite ~/examples/lite/examples/image_classification/raspberry_pi/mobilenet_v2_1.0_224_1_metadata_1.tflite
 ```
@@ -160,7 +160,7 @@ python segment.py
 ```
 https://tfhub.dev/sayakpaul/lite-model/mobilenetv2-dm05-coco/int8/1
 ```
-2. Move the file (~/Dowload) to image_segmentation/raspberry_pi folder
+2. Move the file (~/Dowloads) to image_segmentation/raspberry_pi folder
 ```
 mv ~/Downloads/1.tflite ~/examples/lite/examples/image_segmentation/raspberry_pi/lite-model_mobilenetv2-dm05-coco_int8_1.tflite
 ```
@@ -170,19 +170,45 @@ python segment.py --model lite-model_mobilenetv2-dm05-coco_int8_1.tflite
 ```
 
 
-### Activity: Setup Yolo Computer Vision Environment
-
+### Activity: Setup YOLO Computer Vision Environment
+1. Create a py312 environment and activate it
 ```
 cd ~
 python3 -m venv py312
 source ~/py312/bin/activate
 ```
-- Install the requirements file
+2. Install the dependencies from requirements file
 ```
 git clone https://github.com/ultralytics/yolov5  
 cd yolov5
 pip install -r requirements.txt
+pip install tensorflow
 ```
+
+### Activity: YOLO Object Detection
+1. Go to yolov5 folder and run detect.py
+```
+cd ~/yolov5
+python detect.py --source 0
+```
+
+### Activity 4.3 YOLO v5 TFLite Model 
+1. Go to below link and download YOLO v5 TFLite model
+```
+https://tfhub.dev/neso613/lite-model/yolo-v5-tflite/tflite_model/1
+```
+
+2. Move the file (~/Dowloads) to yolov5 folder
+```
+mv ~/Downloads/1.tflite ~/yolov5/lite-model_yolo-v5-tflite_tflite_model_1.tflite
+```
+
+3. Run YOLO v5 model
+```
+python detect.py --source 0 --weights lite-model_yolo-v5-tflite_tflite_model_1.tflite
+```
+
+
 
 ### Activity 2.3: Using OpenCV and Camera
 - Open Thonny, save below code to "capture_video.py" 
@@ -247,35 +273,6 @@ cv2.destroyAllWindows()
 - Go to below link, train 2 different images, let the machine recognize them.
 - https://teachablemachine.withgoogle.com/train/image
 
-
-
-
-### Activity 4.2 YOLO Object Detection
-- Use back the Raspberry Pi 4, Bookworm in Activity 2.1
-```
-cd ~/yolo
-source yoloenv/bin/activate
-git clone https://github.com/ultralytics/yolov5
-cd ~/yolo/yolov5
-pip install -r requirements.txt
-```
-- Run YOLO object detection
-```
-python detect.py --source 0
-```
-### Activity 4.3 YOLO v5 TFLite Model 
-- Download YOLO v5 TFLite Model
-```
-https://tfhub.dev/neso613/lite-model/yolo-v5-tflite/tflite_model/1 
-```
-- Install dependency
-```
-pip install tensorflow
-```
-- Run YOLO v5
-```
-python detect.py --source 0 --weights lite-model_yolo-v5-tflite_tflite_model_1.tflite
-```
 
 
 
