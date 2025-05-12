@@ -7,10 +7,10 @@
 
 <img src="https://github.com/twming/Computer_Vision_NN_Model/blob/Pi5/img/rasp-imager-download.png" alt="ImagerDownload" width="600">
 
-2. Install Ubuntu Desktop 24.04.2 LTS (64-Bit)
+2. Install Ubuntu Desktop 24.04.2 LTS (64-Bit), it will take about 20 mins to clone the SDCard
 <img src="https://github.com/twming/Computer_Vision_NN_Model/blob/Pi5/img/rasp-imager.png" alt="Imager" width="300">
 <img src="https://github.com/twming/Computer_Vision_NN_Model/blob/Pi5/img/rasp-ubuntu.png" alt="Ubuntu" width="300">
-3. System Configuration:
+3. System Configuration: Insert the cloned SDCard to RaspberryPi4/5, boot up the system, you need to setup below:
 
 - Language: English
 - Keyboard Layout: English(US)
@@ -19,7 +19,9 @@
 - username/password: pi/pi (Require my password to log in)
 
 ### Activity: Configure Ubuntu and Environment
-1. Install python 3.9
+1. Login to RaspberryPi4/5, open terminal
+<img src="https://github.com/twming/Computer_Vision_NN_Model/blob/Pi5/img/terminal.png" alt="Terminal" width="300">
+2. install python 3.9
 ```
 sudo apt update
 sudo apt install -y software-properties-common
