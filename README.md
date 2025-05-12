@@ -121,7 +121,7 @@ mv ~/Downloads/1.tflite ~/examples/lite/examples/image_classification/raspberry_
 ```
 3. Run image classification using MobileNet model
 ```
-python classify --model mobilenet_v2_1.0_224_1_metadata_1.tflite
+python classify.py --model mobilenet_v2_1.0_224_1_metadata_1.tflite
 ```
 
 ## Topic 4: Object Detection
