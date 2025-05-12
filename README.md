@@ -13,7 +13,14 @@
 - username/password: pi/pi (Require my password to log in)
 
 ### Activity: Configure Ubuntu and Environment
-- login
+- 
+```
+sudo apt update
+sudo apt install -y software-properties-common
+sudo add-apt-repository -y ppa:deadsnakes/ppa
+sudo apt update
+sudo apt install python3.9 python3.9-venv python3.12-venv python3.9-dev
+```
 
 ### Activity 2.2: Setup environment
 ```
