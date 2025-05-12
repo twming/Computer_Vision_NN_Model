@@ -39,13 +39,19 @@ sudo ufw enable
 sudo ufw allow 3389/tcp
 sudo ufw reload
 ```
-3. Check the service is running and the port are allowed
+4. Check the service is running and the port are allowed
 ```
 sudo ufw status
 sudo systemctl xrdp
 ```
-4. Reboot your Raspberry Pi
-
+5. Check your Raspberry Pi IP address
+```
+ip addr
+```
+6. Reboot your Raspberry Pi
+```
+sudo poweroff
+```
 
 ### Activity: Setup Tensorflow Computer Vision Environment
 1. Login to RaspberryPi4/5 (ip:xxx.xxx.xxx.xxx) using username/password (pi/pi)
