@@ -76,7 +76,7 @@ pip3 install numpy==1.20.0
 ```
 5. Check the correct package lists installed
 ```
-pip list -l
+pip3 list -l
 ```
 ```
 Package        Version
@@ -174,7 +174,7 @@ python segment.py --model lite-model_mobilenetv2-dm05-coco_int8_1.tflite
 
 ```
 cd ~
-python -m venv py312
+python3 -m venv py312
 source ~/py312/bin/activate
 ```
 - Install the requirements file
