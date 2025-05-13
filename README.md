@@ -48,6 +48,10 @@ sudo systemctl status xrdp
 ```
 ip addr
 ```
+
+> [!IMPORTANT] 
+> - Please take note of the IP Address, as you need it to remote login after reboot
+
 6. Reboot your Raspberry Pi
 ```
 sudo poweroff
@@ -55,6 +59,9 @@ sudo poweroff
 
 ### Activity: Setup Tensorflow Computer Vision Environment
 1. Login to RaspberryPi4/5 (ip:xxx.xxx.xxx.xxx) using username/password (pi/pi)
+
+> [!IMPORTANT] 
+> - There is ONLY ONE session to allow login, if you have multiple session, please Log Out others.
 
 <img src="https://github.com/twming/Computer_Vision_NN_Model/blob/Pi5/img/remote_desktop.png" alt="RemoteDesktop" width="500">
 
@@ -87,6 +94,10 @@ protobuf       3.20.3
 tflite-runtime 2.13.0
 tflite-support 0.4.3
 ```
+
+> [!IMPORTANT] 
+> - Make sure above packages version are matched, below proceed on
+
 6. Clone the Tensorflow Example repository
 ```
 git clone https://github.com/tensorflow/examples.git
