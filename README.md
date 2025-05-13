@@ -42,7 +42,7 @@ sudo ufw reload
 4. Check the service is running and the port are allowed
 ```
 sudo ufw status
-sudo systemctl xrdp
+sudo systemctl status xrdp
 ```
 5. Check your Raspberry Pi IP address
 ```
