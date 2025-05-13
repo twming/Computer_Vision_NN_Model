@@ -69,7 +69,7 @@ sudo poweroff
 3. Create a py39 environment and activate it
 ```
 cd ~
-python3.9 -m venv  py39
+python3.9 -m venv py39
 source ~/py39/bin/activate
 ```
 4. Install packages dependencies
@@ -127,6 +127,8 @@ python classify.py
 ```
 https://tfhub.dev/tensorflow/lite-model/mobilenet_v2_1.0_224/1/metadata/1
 ```
+<img src="https://github.com/twming/Computer_Vision_NN_Model/blob/Pi5/img/tflite_download.png" alt="TfliteDownload" width="500">
+
 2. Move the file (~/Dowloads) to image_classification/raspberry_pi folder
 ```
 mv ~/Downloads/1.tflite ~/examples/lite/examples/image_classification/raspberry_pi/mobilenet_v2_1.0_224_1_metadata_1.tflite
@@ -153,7 +155,7 @@ python detect.py
 
 ### Activity: Tensorflow Image Segmentation with EfficientNet
 
-1. Setup and install the Object Detection EfficientNet model
+1. Setup and install the Image Segmentation EfficientNet model
 ``` 
 cd ~/examples/lite/examples/image_segmentation/raspberry_pi/
 sh setup.sh
