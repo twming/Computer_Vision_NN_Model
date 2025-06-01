@@ -1,4 +1,4 @@
-# Computer Vision for Beginner
+![image](https://github.com/user-attachments/assets/e656f8a9-3b27-477f-a9bd-ae348a0356a0)# Computer Vision for Beginner
 
 ## Topic 2: Basic Computer Vision Techniques
 
@@ -25,7 +25,7 @@
 2. Install python 3.9
 ```
 sudo apt update
-sudo apt install -y software-properties-common git curl
+sudo apt install -y software-properties-common git curl gedit python3-pip
 sudo add-apt-repository -y ppa:deadsnakes/ppa
 sudo apt update
 sudo apt install -y python3.9 python3.9-venv python3.12-venv python3.9-dev
@@ -56,6 +56,114 @@ ip addr
 ```
 sudo poweroff
 ```
+
+### Activity: Python Env and Install OpenCV
+1. Open a terminal, run below
+```
+cd ~
+python3 -m venv py312
+source ~/py312/bin/activate
+pip install opencv-python
+```
+2. Open another terminal, run below
+```
+cd ~
+python3.9 -m venv py39
+source ~/py39/bin/activate
+pip install opencv-python
+```
+
+### Activity : Capture Video from Camera
+- Open TextEdit file "capture_video.py"
+```
+cd ~/Downloads
+gedit capture_video.py
+```
+
+- Save below code to "capture_video.py"
+```
+import cv2 as cv
+
+cap = cv.VideoCapture(0)
+while True:
+    ret, frame = cap.read()
+    if not ret:
+        print("Can't receive frame (stream end?). Exiting ...")
+        break
+    gray = cv.cvtColor(frame, cv.COLOR_BGR2GRAY)
+    cv.imshow('frame', gray)
+    if cv.waitKey(1) == ord('q'):
+        break
+cap.release()
+cv.destroyAllWindows()
+```
+
+- Give the terminal access to your camera
+```
+sudo chmod 777 /dev/video0
+```
+
+- Run the capture_video.py
+```
+python capture_video.py
+```
+
+### Activity : Saving Video from Camera
+- Open TextEdit file "save_video.py"
+```
+cd ~/Downloads
+gedit save_video.py
+```
+
+- Save below code to "save_video.py"
+```
+import cv2 as cv
+
+cap = cv.VideoCapture(0)
+fourcc = cv.VideoWriter_fourcc(*'XVID')
+out = cv.VideoWriter('output.avi', fourcc, 20.0, (640,  480))
+
+while cap.isOpened():
+    ret, frame = cap.read()
+    frame = cv.flip(frame, 0)
+
+    out.write(frame)
+    cv.imshow('frame', frame)
+    if cv.waitKey(1) == ord('q'):
+        break
+
+cap.release()
+out.release()
+cv.destroyAllWindows()
+```
+
+- Give the terminal access to your camera (only need to do once per terminal)
+```
+sudo chmod 777 /dev/video0
+```
+
+- Run the save_video.py
+```
+python save_video.py
+```
+
+- Picamera2 reference
+```
+import cv2
+from picamera2 import Picamera2
+
+picam2 = Picamera2()
+picam2.start()
+while True:
+    image = picam2.capture_array()
+    cv2.imshow("Frame", image)
+    if(cv2.waitKey(1) == ord("q")):
+        cv2.imwrite("test_frame.png", image)
+        break
+
+cv2.destroyAllWindows()
+```
+
 
 ### Activity: Setup Tensorflow Computer Vision Environment
 1. Login to RaspberryPi4/5 (ip:xxx.xxx.xxx.xxx) using username/password (pi/pi)
@@ -222,64 +330,6 @@ python detect.py --source 0 --weights lite-model_yolo-v5-tflite_tflite_model_1.t
 ```
 
 
-
-### Activity 2.3: Using OpenCV and Camera
-- Open Thonny, save below code to "capture_video.py" 
-- Run the code "python capture_video.py" to capture video from camera
-```
-import cv2 as cv
-
-cap = cv.VideoCapture(0)
-while True:
-    ret, frame = cap.read()
-    if not ret:
-        print("Can't receive frame (stream end?). Exiting ...")
-        break
-    gray = cv.cvtColor(frame, cv.COLOR_BGR2GRAY)
-    cv.imshow('frame', gray)
-    if cv.waitKey(1) == ord('q'):
-        break
-cap.release()
-cv.destroyAllWindows()
-```
-- Open Thonny, save below code to "save_video.py" 
-- Run the code "python save_video.py" to save video from camera (output.avi)
-```
-import cv2 as cv
-
-cap = cv.VideoCapture(0)
-fourcc = cv.VideoWriter_fourcc(*'XVID')
-out = cv.VideoWriter('output.avi', fourcc, 20.0, (640,  480))
-
-while cap.isOpened():
-    ret, frame = cap.read()
-    frame = cv.flip(frame, 0)
-
-    out.write(frame)
-    cv.imshow('frame', frame)
-    if cv.waitKey(1) == ord('q'):
-        break
-
-cap.release()
-out.release()
-cv.destroyAllWindows()
-```
-- Picamera2 reference
-```
-import cv2
-from picamera2 import Picamera2
-
-picam2 = Picamera2()
-picam2.start()
-while True:
-    image = picam2.capture_array()
-    cv2.imshow("Frame", image)
-    if(cv2.waitKey(1) == ord("q")):
-        cv2.imwrite("test_frame.png", image)
-        break
-
-cv2.destroyAllWindows()
-```
 
 
 ### Activity 3.1 Teachable Machine
