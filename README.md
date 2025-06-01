@@ -2,7 +2,7 @@
 
 ## Topic 2: Basic Computer Vision Techniques
 
-### Activity : Raspberry Pi Installation
+### Activity : Raspberry Pi Installation and Setup
 1. Go to https://www.raspberrypi.com/software/, download Raspberry Pi Imager.
 
 <img src="https://github.com/twming/Computer_Vision_NN_Model/blob/Pi5/img/rasp-imager-download.png" alt="ImagerDownload" width="600">
