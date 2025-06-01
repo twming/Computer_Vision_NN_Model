@@ -171,27 +171,35 @@ cv2.destroyAllWindows()
 ### Activity : Play Video
 1. Modify from capture_video.py, then play the video "output.avi"
 
+
+### Activity: Teachable Machine
+- Go to below link, train 3 different classes (scissor, paper, stone), let the machine recognize them.
+- https://teachablemachine.withgoogle.com/train/image
+
 ### Activity: Setup Tensorflow Computer Vision Environment
 
-2. Open the terminal
-3. Create a py39 environment and activate it
+1. Open the terminal
+2. Activate py39 environment
 ```
-cd ~
-python3.9 -m venv py39
 source ~/py39/bin/activate
+```
+3. Clone the Tensorflow Example repository
+```
+cd ~/Downloads
+git clone https://github.com/tensorflow/examples.git
 ```
 4. Install packages dependencies
 ```
-pip3 install argparse
-pip3 install opencv-python==4.5.3.56
-pip3 install protobuf==3.20.3
-pip3 install tflite-runtime==2.13.0
-pip3 install tflite-support==0.4.3
-pip3 install numpy==1.20.0
+pip install argparse
+pip install opencv-python==4.5.3.56
+pip install protobuf==3.20.3
+pip install tflite-runtime==2.13.0
+pip install tflite-support==0.4.3
+pip install numpy==1.20.0
 ```
 5. Check the correct package lists installed
 ```
-pip3 list -l
+pip list -l
 ```
 ```
 Package        Version
@@ -206,25 +214,21 @@ tflite-support 0.4.3
 > [!IMPORTANT] 
 > - Make sure above packages version are matched, below proceed on
 
-6. Clone the Tensorflow Example repository
-```
-git clone https://github.com/tensorflow/examples.git
-```
-
 ### Activity: Tensorflow Image Classification with EfficientNet
-
-1. Setup and install the image classification EfficientNet model
+1. Activate py39 environment
+```
+source ~/py39/bin/activate
+```
+2. Setup and install the image classification EfficientNet model
 ``` 
-cd ~/examples/lite/examples/image_classification/raspberry_pi/
+cd ~/Downloads/examples/lite/examples/image_classification/raspberry_pi/
 sh setup.sh
 ````
-
-2. Connect your USB Camera and give the access permission to /dev/video0
+3. Connect your USB Camera and give the access permission to /dev/video0
 ```
 sudo chmod 777 /dev/video0
 ```
-
-3. Run Image Classification using Camera
+4. Run Image Classification using Camera
 ```
 python classify.py
 ```
@@ -239,7 +243,7 @@ https://tfhub.dev/tensorflow/lite-model/mobilenet_v2_1.0_224/1/metadata/1
 
 2. Move the file (~/Dowloads) to image_classification/raspberry_pi folder
 ```
-mv ~/Downloads/1.tflite ~/examples/lite/examples/image_classification/raspberry_pi/mobilenet_v2_1.0_224_1_metadata_1.tflite
+mv ~/Downloads/1.tflite ~/Downloads/examples/lite/examples/image_classification/raspberry_pi/mobilenet_v2_1.0_224_1_metadata_1.tflite
 ```
 3. Run image classification using MobileNet model
 ```
@@ -330,11 +334,6 @@ python detect.py --source 0 --weights lite-model_yolo-v5-tflite_tflite_model_1.t
 ```
 
 
-
-
-### Activity 3.1 Teachable Machine
-- Go to below link, train 2 different images, let the machine recognize them.
-- https://teachablemachine.withgoogle.com/train/image
 
 
 
