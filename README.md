@@ -1,5 +1,3 @@
-![image](https://github.com/user-attachments/assets/e656f8a9-3b27-477f-a9bd-ae348a0356a0)# Computer Vision for Beginner
-
 ## Topic 2: Basic Computer Vision Techniques
 
 ### Activity : Raspberry Pi Installation and Setup
