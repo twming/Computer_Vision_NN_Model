@@ -233,6 +233,12 @@ sudo chmod 777 /dev/video0
 python classify.py
 ```
 
+### Activity: Image Classification Run Option
+1. Run classify image with EfficientNet. Return only 1 result. The threshold score should be more than 0.7
+```
+python classify.py --model efficientnet_lite0.tflite --max_results 1 --score_threshold 0.7
+```
+
 ### Activity: Tensorflow Image Classification with MobileNet
 
 1. Go to below link and download MobileNet model
