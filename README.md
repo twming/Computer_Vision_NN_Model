@@ -17,10 +17,17 @@
 - username/password: pi/pi (Require my password to log in)
 
 ### Activity: Configure Ubuntu and Environment
-1. Login to RaspberryPi4/5, open terminal
+1. Login to RaspberryPi4/5 (ip:xxx.xxx.xxx.xxx) using username/password (pi/pi)
+
+> [!IMPORTANT] 
+> - There is ONLY ONE session to allow login, if you have multiple session, please Log Out others.
+
+<img src="https://github.com/twming/Computer_Vision_NN_Model/blob/Pi5/img/remote_desktop.png" alt="RemoteDesktop" width="500">
+
+2. Open Terminal
 <img src="https://github.com/twming/Computer_Vision_NN_Model/blob/Pi5/img/terminal.png" alt="Terminal" width="500">
 
-2. Install python 3.9
+3. Install python 3.9
 ```
 sudo apt update
 sudo apt install -y software-properties-common git curl gedit python3-pip
@@ -28,7 +35,7 @@ sudo add-apt-repository -y ppa:deadsnakes/ppa
 sudo apt update
 sudo apt install -y python3.9 python3.9-venv python3.12-venv python3.9-dev
 ```
-3. Install XRDP remote access
+4. Install XRDP remote access
 ```
 sudo apt install -y ubuntu-gnome-desktop
 sudo apt install -y xrdp
@@ -37,12 +44,12 @@ sudo ufw enable
 sudo ufw allow 3389/tcp
 sudo ufw reload
 ```
-4. Check the service is running and the port are allowed
+5. Check the service is running and the port are allowed
 ```
 sudo ufw status
 sudo systemctl status xrdp
 ```
-5. Check your Raspberry Pi IP address
+6. Check your Raspberry Pi IP address
 ```
 ip addr
 ```
@@ -50,7 +57,7 @@ ip addr
 > [!IMPORTANT] 
 > - Please take note of the IP Address, as you need it to remote login after reboot
 
-6. Reboot your Raspberry Pi
+7. Reboot your Raspberry Pi
 ```
 sudo poweroff
 ```
@@ -72,13 +79,13 @@ pip install opencv-python
 ```
 
 ### Activity : Capture Video from Camera
-- Open TextEdit file "capture_video.py"
+1. Open TextEdit file "capture_video.py"
 ```
 cd ~/Downloads
 gedit capture_video.py
 ```
 
-- Save below code to "capture_video.py"
+2. Save below code to "capture_video.py"
 ```
 import cv2 as cv
 
@@ -96,24 +103,24 @@ cap.release()
 cv.destroyAllWindows()
 ```
 
-- Give the terminal access to your camera
+3. Give the terminal access to your camera
 ```
 sudo chmod 777 /dev/video0
 ```
 
-- Run the capture_video.py
+4. Run the capture_video.py
 ```
 python capture_video.py
 ```
 
 ### Activity : Saving Video from Camera
-- Open TextEdit file "save_video.py"
+1. Open TextEdit file "save_video.py"
 ```
 cd ~/Downloads
 gedit save_video.py
 ```
 
-- Save below code to "save_video.py"
+2. Save below code to "save_video.py"
 ```
 import cv2 as cv
 
@@ -135,12 +142,12 @@ out.release()
 cv.destroyAllWindows()
 ```
 
-- Give the terminal access to your camera (only need to do once per terminal)
+3. Give the terminal access to your camera (only need to do once per terminal)
 ```
 sudo chmod 777 /dev/video0
 ```
 
-- Run the save_video.py
+4. Run the save_video.py
 ```
 python save_video.py
 ```
@@ -161,15 +168,10 @@ while True:
 
 cv2.destroyAllWindows()
 ```
-
+### Activity : Play Video
+1. Modify from capture_video.py, then play the video "output.avi"
 
 ### Activity: Setup Tensorflow Computer Vision Environment
-1. Login to RaspberryPi4/5 (ip:xxx.xxx.xxx.xxx) using username/password (pi/pi)
-
-> [!IMPORTANT] 
-> - There is ONLY ONE session to allow login, if you have multiple session, please Log Out others.
-
-<img src="https://github.com/twming/Computer_Vision_NN_Model/blob/Pi5/img/remote_desktop.png" alt="RemoteDesktop" width="500">
 
 2. Open the terminal
 3. Create a py39 environment and activate it
