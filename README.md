@@ -171,6 +171,7 @@ cv2.destroyAllWindows()
 ### Activity : Play Video
 1. Modify from capture_video.py, then play the video "output.avi"
 
+## Topic 3: Image Classification
 
 ### Activity: Teachable Machine
 - Go to below link, train 3 different classes (scissor, paper, stone), let the machine recognize them.
@@ -234,25 +235,34 @@ python classify.py
 ```
 
 ### Activity: Image Classification Run Option
-1. Run classify image with EfficientNet. Return only 1 result. The threshold score should be more than 0.7
+1. Activate py39 environment
 ```
+source ~/py39/bin/activate
+```
+2. Run classify image with EfficientNet. Return only 1 result. The threshold score should be more than 0.7
+```
+cd ~/Downloads/examples/lite/examples/image_classification/raspberry_pi/
 python classify.py --model efficientnet_lite0.tflite --max_results 1 --score_threshold 0.7
 ```
 
 ### Activity: Tensorflow Image Classification with MobileNet
-
-1. Go to below link and download MobileNet model
+1. Activate py39 environment
+```
+source ~/py39/bin/activate
+```
+2. Go to below link and download MobileNet model
 ```
 https://tfhub.dev/tensorflow/lite-model/mobilenet_v2_1.0_224/1/metadata/1
 ```
 <img src="https://github.com/twming/Computer_Vision_NN_Model/blob/Pi5/img/tflite_download.png" alt="TfliteDownload" width="500">
 
-2. Move the file (~/Dowloads) to image_classification/raspberry_pi folder
+3. Move the file (~/Dowloads) to image_classification/raspberry_pi folder
 ```
 mv ~/Downloads/1.tflite ~/Downloads/examples/lite/examples/image_classification/raspberry_pi/mobilenet_v2_1.0_224_1_metadata_1.tflite
 ```
-3. Run image classification using MobileNet model
+4. Run image classification using MobileNet model
 ```
+cd ~/Downloads/examples/lite/examples/image_classification/raspberry_pi/
 python classify.py --model mobilenet_v2_1.0_224_1_metadata_1.tflite
 ```
 
@@ -260,87 +270,141 @@ python classify.py --model mobilenet_v2_1.0_224_1_metadata_1.tflite
 
 ### Activity: Tensorflow Object Detection with EfficientNet
 
-1. Setup and install the Object Detection EfficientNet model
+1. Activate py39 environment
+```
+source ~/py39/bin/activate
+```
+2. Setup and install the Object Detection EfficientNet model
 ``` 
-cd ~/examples/lite/examples/object_detection/raspberry_pi/
+cd ~/Downloads/examples/lite/examples/object_detection/raspberry_pi/
 sh setup.sh
 ````
-
-2. Run Object detection using Camera
+3. Connect your USB Camera and give the access permission to /dev/video0
 ```
+sudo chmod 777 /dev/video0
+```
+4. Run Object detection using Camera
+```
+cd ~/Downloads/examples/lite/examples/object_detection/raspberry_pi/
 python detect.py
 ```
 
-### Activity: Tensorflow Image Segmentation with EfficientNet
-
-1. Setup and install the Image Segmentation EfficientNet model
-``` 
-cd ~/examples/lite/examples/image_segmentation/raspberry_pi/
-sh setup.sh
-````
-
-2. Run Image Segmentation using Camera
+### Activity: Tensorflow Object Detection with SSD_MobileNet
+1. Activate py39 environment
 ```
-python segment.py
+source ~/py39/bin/activate
 ```
-
-
-### Activity: Tensorflow Image Segmentation with MobileNetV2
-
-1. Go to below link and download MobileNetV2 model
+2. Go to below link and download SSD_MobileNet model
 ```
-https://tfhub.dev/sayakpaul/lite-model/mobilenetv2-dm05-coco/int8/1
+https://www.kaggle.com/models/tensorflow/ssd-mobilenet-v1/tfLite
 ```
-2. Move the file (~/Dowloads) to image_segmentation/raspberry_pi folder
+3. Move the file (~/Dowloads) to object_detection/raspberry_pi folder
 ```
-mv ~/Downloads/1.tflite ~/examples/lite/examples/image_segmentation/raspberry_pi/lite-model_mobilenetv2-dm05-coco_int8_1.tflite
+mv ~/Downloads/1.tflite ~/Downloads/examples/lite/examples/object_detection/raspberry_pi/ssd_mobilenet_v1.tflite
 ```
-3. Run image segmentation using MobileNetV2 model
+4. Run image classification using MobileNet model
 ```
-python segment.py --model lite-model_mobilenetv2-dm05-coco_int8_1.tflite
+cd ~/Downloads/examples/lite/examples/object_detection/raspberry_pi/
+python detect.py --model ssd_mobilenet_v1.tflite
 ```
 
-
-### Activity: Setup YOLO Computer Vision Environment
-1. Create a py312 environment and activate it
+### Activity: Setup YoLo Computer Vision Environment
+1. Open the terminal
+2. Activate py312 environment
 ```
-cd ~
-python3 -m venv py312
 source ~/py312/bin/activate
 ```
-2. Install the dependencies from requirements file
+3. Clone the YoLo5 repository and install dependencies from requirements file
 ```
+cd ~/Downloads
 git clone https://github.com/ultralytics/yolov5  
 cd yolov5
 pip install -r requirements.txt
-pip install tensorflow
 ```
 
-### Activity: YOLO Object Detection
-1. Go to yolov5 folder and run detect.py
+### Activity: YoLo Object Detection
+1. Activate py312 environment
 ```
-cd ~/yolov5
+source ~/py312/bin/activate
+```
+2. Go to yolov5 folder and run detect.py
+```
+cd ~/Downloads/yolov5
 python detect.py --source 0
 ```
 
-### Activity 4.3 YOLO v5 TFLite Model 
-1. Go to below link and download YOLO v5 TFLite model
+### Activity: YoLo v5 TFLite Model
+1. Activate py312 environment
+```
+source ~/py312/bin/activate
+```
+2. Go to below link and download YOLO v5 TFLite model
 ```
 https://tfhub.dev/neso613/lite-model/yolo-v5-tflite/tflite_model/1
 ```
-
-2. Move the file (~/Dowloads) to yolov5 folder
+3. Move the file (~/Dowloads) to yolov5 folder
 ```
-mv ~/Downloads/1.tflite ~/yolov5/lite-model_yolo-v5-tflite_tflite_model_1.tflite
+mv ~/Downloads/1.tflite ~/Downloads/yolov5/lite-model_yolo-v5-tflite_tflite_model_1.tflite
 ```
-
-3. Run YOLO v5 model
+4. Run YOLO v5 model
 ```
+cd ~/Downloads/yolov5
 python detect.py --source 0 --weights lite-model_yolo-v5-tflite_tflite_model_1.tflite --imgsz 320
 ```
 
 
+### Activity: Tensorflow Image Segmentation with EfficientNet
+1. Activate py39 environment
+```
+source ~/py39/bin/activate
+```
+2. Setup and install the Image Segmentation EfficientNet model
+``` 
+cd ~/Downloads/examples/lite/examples/image_segmentation/raspberry_pi/
+sh setup.sh
+````
+3. Run Image Segmentation using Camera
+```
+python segment.py
+```
 
+### Activity: Tensorflow Image Segmentation with MobileNetV2
+1. Activate py39 environment
+```
+source ~/py39/bin/activate
+```
+2. Go to below link and download MobileNetV2 model
+```
+https://tfhub.dev/sayakpaul/lite-model/mobilenetv2-dm05-coco/int8/1
+```
+3. Move the file (~/Dowloads) to image_segmentation/raspberry_pi folder
+```
+mv ~/Downloads/1.tflite ~/Downloads/examples/lite/examples/image_segmentation/raspberry_pi/lite-model_mobilenetv2-dm05-coco_int8_1.tflite
+```
+4. Run image segmentation using MobileNetV2 model
+```
+cd ~/Downloads/examples/lite/examples/image_segmentation/raspberry_pi/
+python segment.py --model lite-model_mobilenetv2-dm05-coco_int8_1.tflite
+```
+
+### Activity: YoLo Image Segmentation 
+1. Activate py312 environment
+```
+source ~/py312/bin/activate
+```
+2. Go to below link and download YOLO v5 TFLite model
+```
+https://github.com/ultralytics/yolov5/releases/download/v7.0/yolov5s-seg.pt
+```
+2. Move the file (~/Dowloads) to yolov5 folder
+```
+mv ~/Downloads/yolov5s-seg.pt ~/Downloads/yolov5/segment/yolov5s-seg.pt
+```
+3. Run YOLO v5 model
+```
+cd ~/Downloads/yolov5/segment
+python predict.py --source 0 --weights yolov5s-seg.pt
+```
 
 
 
