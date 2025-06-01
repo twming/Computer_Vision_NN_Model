@@ -242,7 +242,7 @@ source ~/py39/bin/activate
 2. Run classify image with EfficientNet. Return only 1 result. The threshold score should be more than 0.7
 ```
 cd ~/Downloads/examples/lite/examples/image_classification/raspberry_pi/
-python classify.py --model efficientnet_lite0.tflite --max_results 1 --score_threshold 0.7
+python classify.py --model efficientnet_lite0.tflite --maxResults 1 --scoreThreshold 0.7
 ```
 
 ### Activity: Tensorflow Image Classification with MobileNet
