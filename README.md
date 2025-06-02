@@ -255,18 +255,9 @@ source ~/py39/bin/activate
 ```
 2. Go to below link and download MobileNet model
 ```
-https://tfhub.dev/tensorflow/lite-model/mobilenet_v2_1.0_224/1/metadata/1
-```
-```
 curl -L https://github.com/twming/Computer_Vision_NN_Model/raw/Pi5/mobilenet_v2_1.0_224_1_metadata_1.tflite -o ~/Downloads/examples/lite/examples/image_classification/raspberry_pi/mobilenet_v2_1.0_224_1_metadata_1.tflite
 ```
-<img src="https://github.com/twming/Computer_Vision_NN_Model/blob/Pi5/img/tflite_download.png" alt="TfliteDownload" width="500">
-
-3. Move the file (~/Dowloads) to image_classification/raspberry_pi folder
-```
-mv ~/Downloads/1.tflite ~/Downloads/examples/lite/examples/image_classification/raspberry_pi/mobilenet_v2_1.0_224_1_metadata_1.tflite
-```
-4. Run image classification using MobileNet model
+3. Run image classification using MobileNet model
 ```
 cd ~/Downloads/examples/lite/examples/image_classification/raspberry_pi/
 python classify.py --model mobilenet_v2_1.0_224_1_metadata_1.tflite
@@ -302,16 +293,12 @@ source ~/py39/bin/activate
 ```
 2. Go to below link and download SSD_MobileNet model
 ```
-https://github.com/twming/Computer_Vision_NN_Model/blob/Pi5/ssd_mobilenet_metadata.tflite
+curl -L https://github.com/twming/Computer_Vision_NN_Model/raw/Pi5/ssd_mobilenet_v1_metadata.tflite -o ~/Downloads/examples/lite/examples/object_detection/raspberry_pi/ssd_mobilenet_v1_metadata.tflite
 ```
-3. Move the file (~/Dowloads) to object_detection/raspberry_pi folder
-```
-mv ~/Downloads/ssd_mobilenet_metadata.tflite ~/Downloads/examples/lite/examples/object_detection/raspberry_pi/ssd_mobilenet_metadata.tflite
-```
-4. Run object detection using SSD_MobileNet model
+3. Run object detection using SSD_MobileNet model
 ```
 cd ~/Downloads/examples/lite/examples/object_detection/raspberry_pi/
-python detect.py --model ssd_mobilenet_metadata.tflite
+python detect.py --model ssd_mobilenet_v1_metadata.tflite
 ```
 
 ### Activity: Setup YoLo Computer Vision Environment
@@ -353,17 +340,13 @@ source ~/py312/bin/activate
 ```
 2. Go to below link and download YOLO v5 TFLite model
 ```
-https://tfhub.dev/neso613/lite-model/yolo-v5-tflite/tflite_model/1
+curl -L https://github.com/twming/Computer_Vision_NN_Model/raw/Pi5/lite-model_yolo-v5-tflite_tflite_model_1.tflite -o ~/Downloads/yolov5/lite-model_yolo-v5-tflite_tflite_model_1.tflite
 ```
-3. Move the file (~/Dowloads) to yolov5 folder
-```
-mv ~/Downloads/1.tflite ~/Downloads/yolov5/lite-model_yolo-v5-tflite_tflite_model_1.tflite
-```
-4. Install tensorflow package to read tflite model.
+3. Install tensorflow package to read tflite model.
 ```
 pip install tensorflow
 ```
-5. Run YOLO v5 model
+4. Run YOLO v5 model
 ```
 cd ~/Downloads/yolov5
 python detect.py --source 0 --weights lite-model_yolo-v5-tflite_tflite_model_1.tflite --imgsz 320
@@ -392,13 +375,9 @@ source ~/py39/bin/activate
 ```
 2. Go to below link and download MobileNetV2 model
 ```
-https://tfhub.dev/sayakpaul/lite-model/mobilenetv2-dm05-coco/int8/1
+curl -L https://github.com/twming/Computer_Vision_NN_Model/raw/Pi5/lite-model_mobilenetv2-dm05-coco_int8_1.tflite -o ~/Downloads/examples/lite/examples/image_segmentation/raspberry_pi/lite-model_mobilenetv2-dm05-coco_int8_1.tflite
 ```
-3. Move the file (~/Dowloads) to image_segmentation/raspberry_pi folder
-```
-mv ~/Downloads/1.tflite ~/Downloads/examples/lite/examples/image_segmentation/raspberry_pi/lite-model_mobilenetv2-dm05-coco_int8_1.tflite
-```
-4. Run image segmentation using MobileNetV2 model
+3. Run image segmentation using MobileNetV2 model
 ```
 cd ~/Downloads/examples/lite/examples/image_segmentation/raspberry_pi/
 python segment.py --model lite-model_mobilenetv2-dm05-coco_int8_1.tflite
@@ -411,11 +390,7 @@ source ~/py312/bin/activate
 ```
 2. Go to below link and download YOLO v5 TFLite model
 ```
-https://github.com/ultralytics/yolov5/releases/download/v7.0/yolov5s-seg.pt
-```
-2. Move the file (~/Dowloads) to yolov5 folder
-```
-mv ~/Downloads/yolov5s-seg.pt ~/Downloads/yolov5/segment/yolov5s-seg.pt
+curl -L https://github.com/ultralytics/yolov5/releases/download/v7.0/yolov5s-seg.pt -o ~/Downloads/yolov5s-seg.pt ~/Downloads/yolov5/segment/yolov5s-seg.pt
 ```
 3. Run YOLO v5 model
 ```
