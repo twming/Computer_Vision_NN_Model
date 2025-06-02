@@ -390,7 +390,7 @@ source ~/py312/bin/activate
 ```
 2. Go to below link and download YOLO v5 TFLite model
 ```
-curl -L https://github.com/ultralytics/yolov5/releases/download/v7.0/yolov5s-seg.pt -o ~/Downloads/yolov5s-seg.pt ~/Downloads/yolov5/segment/yolov5s-seg.pt
+curl -L https://github.com/twming/Computer_Vision_NN_Model/raw/Pi5/yolov5s-seg.pt -o ~/Downloads/yolov5/segment/yolov5s-seg.pt
 ```
 3. Run YOLO v5 model
 ```
