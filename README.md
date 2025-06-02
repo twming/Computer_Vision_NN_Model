@@ -299,16 +299,16 @@ source ~/py39/bin/activate
 ```
 2. Go to below link and download SSD_MobileNet model
 ```
-https://www.kaggle.com/models/tensorflow/ssd-mobilenet-v1/tfLite
+https://github.com/twming/Computer_Vision_NN_Model/blob/Pi5/ssd_mobilenet_metadata.tflite
 ```
 3. Move the file (~/Dowloads) to object_detection/raspberry_pi folder
 ```
-mv ~/Downloads/1.tflite ~/Downloads/examples/lite/examples/object_detection/raspberry_pi/ssd_mobilenet_v1.tflite
+mv ~/Downloads/ssd_mobilenet_metadata.tflite ~/Downloads/examples/lite/examples/object_detection/raspberry_pi/ssd_mobilenet_metadata.tflite
 ```
-4. Run image classification using MobileNet model
+4. Run object detection using SSD_MobileNet model
 ```
 cd ~/Downloads/examples/lite/examples/object_detection/raspberry_pi/
-python detect.py --model ssd_mobilenet_v1.tflite
+python detect.py --model ssd_mobilenet_metadata.tflite
 ```
 
 ### Activity: Setup YoLo Computer Vision Environment
