@@ -213,7 +213,7 @@ tflite-support 0.4.3
 ```
 
 > [!IMPORTANT] 
-> - Make sure above packages version are matched, below proceed on
+> - Make sure above packages version are matched, below proceed on.
 
 ### Activity: Tensorflow Image Classification with EfficientNet
 1. Activate py39 environment
@@ -229,6 +229,10 @@ sh setup.sh
 ```
 sudo chmod 777 /dev/video0
 ```
+
+> [!IMPORTANT] 
+> - Give permission 777 to /dev/video0 your USB camera, before running any computer vision python code
+
 4. Run Image Classification using Camera
 ```
 python classify.py
@@ -327,7 +331,14 @@ pip install -r requirements.txt
 ```
 source ~/py312/bin/activate
 ```
-2. Go to yolov5 folder and run detect.py
+2. Connect your USB Camera and give the access permission to /dev/video0
+```
+sudo chmod 777 /dev/video0
+```
+> [!IMPORTANT] 
+> - Give permission 777 to /dev/video0 your USB camera, before running any computer vision python code
+
+3. Go to yolov5 folder and run detect.py
 ```
 cd ~/Downloads/yolov5
 python detect.py --source 0
@@ -406,23 +417,19 @@ cd ~/Downloads/yolov5/segment
 python predict.py --source 0 --weights yolov5s-seg.pt
 ```
 
-
-
-
-
 ### Revision:
 - Classify Image:
 ```
-classify_path=~/cvision/examples/lite/examples/image_classification/raspberry_pi/
-python $classify_path/classify.py --model mobilenet_v2_1.0_224_1_metadata_1.tflite 
+classify_path=~/Downloads/examples/lite/examples/image_classification/raspberry_pi/
+python $classify_path/classify.py --model $classify_path/mobilenet_v2_1.0_224_1_metadata_1.tflite 
 ```
 - Object Detection:
 ```
-detect_path=~/cvision/examples/lite/examples/object_detection/raspberry_pi/
+detect_path=~/Downloads/examples/lite/examples/object_detection/raspberry_pi/
 python $detect_path/detect.py --model $detect_path/efficientdet_lite0.tflite
 ```
 - Object Segmentation
 ```
-segment_path=~/cvision/examples/lite/examples/image_segmentation/raspberry_pi/
-python $segment_path/segment.py --model lite-model_mobilenetv2-dm05-coco_int8_1.tflite
+segment_path=~/Downloads/examples/lite/examples/image_segmentation/raspberry_pi/
+python $segment_path/segment.py --model $segment_path/lite-model_mobilenetv2-dm05-coco_int8_1.tflite
 ```
