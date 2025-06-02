@@ -17,17 +17,10 @@
 - username/password: pi/pi (Require my password to log in)
 
 ### Activity: Configure Ubuntu and Environment
-1. Login to RaspberryPi4/5 (ip:xxx.xxx.xxx.xxx) using username/password (pi/pi)
-
-> [!IMPORTANT] 
-> - There is ONLY ONE session to allow login, if you have multiple session, please Log Out others.
-
-<img src="https://github.com/twming/Computer_Vision_NN_Model/blob/Pi5/img/remote_desktop.png" alt="RemoteDesktop" width="500">
-
-2. Open Terminal
+1. Open Terminal
 <img src="https://github.com/twming/Computer_Vision_NN_Model/blob/Pi5/img/terminal.png" alt="Terminal" width="500">
 
-3. Install python 3.9
+2. Install python 3.9
 ```
 sudo apt update
 sudo apt install -y software-properties-common git curl gedit python3-pip
@@ -35,7 +28,7 @@ sudo add-apt-repository -y ppa:deadsnakes/ppa
 sudo apt update
 sudo apt install -y python3.9 python3.9-venv python3.12-venv python3.9-dev
 ```
-4. Install XRDP remote access
+3. Install XRDP remote access
 ```
 sudo apt install -y ubuntu-gnome-desktop
 sudo apt install -y xrdp
@@ -44,23 +37,29 @@ sudo ufw enable
 sudo ufw allow 3389/tcp
 sudo ufw reload
 ```
-5. Check the service is running and the port are allowed
+4. Check the service is running and the port are allowed
 ```
 sudo ufw status
 sudo systemctl status xrdp
 ```
-6. Check your Raspberry Pi IP address
+5. Check your Raspberry Pi IP address
 ```
 ip addr
 ```
-
-> [!IMPORTANT] 
-> - Please take note of the IP Address, as you need it to remote login after reboot
-
-7. Reboot your Raspberry Pi
+6. Reboot your Raspberry Pi
 ```
 sudo poweroff
 ```
+7. Login to RaspberryPi4/5 (ip:xxx.xxx.xxx.xxx) using username/password (pi/pi)
+
+> [!IMPORTANT] 
+> - There is ONLY ONE session to allow login, if you have multiple session, please Log Out others.
+
+<img src="https://github.com/twming/Computer_Vision_NN_Model/blob/Pi5/img/remote_desktop.png" alt="RemoteDesktop" width="500">
+
+
+> [!IMPORTANT] 
+> - Please take note of the IP Address, as you need it to remote login after reboot
 
 ### Activity: Python Env and Install OpenCV
 1. Open a terminal, run below
