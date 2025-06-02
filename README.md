@@ -257,6 +257,9 @@ source ~/py39/bin/activate
 ```
 https://tfhub.dev/tensorflow/lite-model/mobilenet_v2_1.0_224/1/metadata/1
 ```
+```
+curl -L https://github.com/twming/Computer_Vision_NN_Model/blob/Pi5/mobilenet_v2_1.0_224_1_metadata_1.tflite -o ~/Downloads/examples/lite/examples/image_classification/raspberry_pi/mobilenet_v2_1.0_224_1_metadata_1.tflite
+```
 <img src="https://github.com/twming/Computer_Vision_NN_Model/blob/Pi5/img/tflite_download.png" alt="TfliteDownload" width="500">
 
 3. Move the file (~/Dowloads) to image_classification/raspberry_pi folder
