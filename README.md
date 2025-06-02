@@ -356,7 +356,11 @@ https://tfhub.dev/neso613/lite-model/yolo-v5-tflite/tflite_model/1
 ```
 mv ~/Downloads/1.tflite ~/Downloads/yolov5/lite-model_yolo-v5-tflite_tflite_model_1.tflite
 ```
-4. Run YOLO v5 model
+4. Install tensorflow package to read tflite model.
+```
+pip install tensorflow
+```
+5. Run YOLO v5 model
 ```
 cd ~/Downloads/yolov5
 python detect.py --source 0 --weights lite-model_yolo-v5-tflite_tflite_model_1.tflite --imgsz 320
