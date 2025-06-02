@@ -17,7 +17,7 @@
 - username/password: pi/pi (Require my password to log in)
 
 ### Activity: Configure Ubuntu and Environment
-1. Open Terminal
+1. Open Terminal (Ctrl+Alt+T)
 <img src="https://github.com/twming/Computer_Vision_NN_Model/blob/Pi5/img/terminal.png" alt="Terminal" width="500">
 
 2. Install python 3.9
@@ -62,14 +62,14 @@ sudo poweroff
 > - Please take note of the IP Address, as you need it to remote login after reboot
 
 ### Activity: Python Env and Install OpenCV
-1. Open a terminal, run below
+1. Open a terminal (Ctrl+Alt+T), run below
 ```
 cd ~
 python3 -m venv py312
 source ~/py312/bin/activate
 pip install opencv-python
 ```
-2. Open another terminal, run below
+2. Open another terminal (Ctrl+Alt+T), run below
 ```
 cd ~
 python3.9 -m venv py39
@@ -178,7 +178,7 @@ cv2.destroyAllWindows()
 
 ### Activity: Setup Tensorflow Computer Vision Environment
 
-1. Open the terminal
+1. Open the terminal (Ctrl+Alt+T)
 2. Activate py39 environment
 ```
 source ~/py39/bin/activate
