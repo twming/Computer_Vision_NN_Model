@@ -62,19 +62,27 @@ sudo poweroff
 > - Please take note of the IP Address, as you need it to remote login after reboot
 
 ### Activity: Python Env and Install OpenCV
-1. Open a terminal (Ctrl+Alt+T), run below
+1. Open a terminal (Ctrl+Alt+T), run below to create python 3.12 environment, called py312. Then install opencv
 ```
 cd ~
 python3 -m venv py312
 source ~/py312/bin/activate
 pip install opencv-python
 ```
-2. Open another terminal (Ctrl+Alt+T), run below
+2. deactivate py312
+```
+deactivate
+```
+3. Open another terminal (Ctrl+Alt+T), run below to create python 3.9 environment, called py39. Then install opencv
 ```
 cd ~
 python3.9 -m venv py39
 source ~/py39/bin/activate
 pip install opencv-python
+```
+4. deactivate py312
+```
+deactivate
 ```
 
 ### Activity : Capture Video from Camera
@@ -232,9 +240,13 @@ sudo chmod 777 /dev/video0
 > [!IMPORTANT] 
 > - Give permission 777 to /dev/video0 your USB camera, before running any computer vision python code
 
-4. Run Image Classification using Camera
+4. Run Image Classification using Camera, q to quit
 ```
 python classify.py
+```
+5. Deactivate python environment
+```
+deactivate
 ```
 
 ### Activity: Image Classification Run Option
@@ -246,6 +258,10 @@ source ~/py39/bin/activate
 ```
 cd ~/Downloads/examples/lite/examples/image_classification/raspberry_pi/
 python classify.py --model efficientnet_lite0.tflite --maxResults 1 --scoreThreshold 0.7
+```
+3. Deactivate python environment
+```
+deactivate
 ```
 
 ### Activity: Tensorflow Image Classification with MobileNet
@@ -261,6 +277,10 @@ curl -L https://github.com/twming/Computer_Vision_NN_Model/raw/Pi5/mobilenet_v2_
 ```
 cd ~/Downloads/examples/lite/examples/image_classification/raspberry_pi/
 python classify.py --model mobilenet_v2_1.0_224_1_metadata_1.tflite
+```
+4. Deactivate python environment
+```
+deactivate
 ```
 
 ## Topic 4: Object Detection
@@ -285,6 +305,10 @@ sudo chmod 777 /dev/video0
 cd ~/Downloads/examples/lite/examples/object_detection/raspberry_pi/
 python detect.py
 ```
+5. Deactivate python environment
+```
+deactivate
+```
 
 ### Activity: Tensorflow Object Detection with SSD_MobileNet
 1. Activate py39 environment
@@ -300,6 +324,10 @@ curl -L https://github.com/twming/Computer_Vision_NN_Model/raw/Pi5/ssd_mobilenet
 cd ~/Downloads/examples/lite/examples/object_detection/raspberry_pi/
 python detect.py --model ssd_mobilenet_v1_metadata.tflite
 ```
+4. Deactivate python environment
+```
+deactivate
+```
 
 ### Activity: Setup YoLo Computer Vision Environment
 1. Open the terminal
@@ -313,6 +341,10 @@ cd ~/Downloads
 git clone https://github.com/ultralytics/yolov5  
 cd yolov5
 pip install -r requirements.txt
+```
+4. Deactivate python environment
+```
+deactivate
 ```
 
 ### Activity: YoLo Object Detection
@@ -331,6 +363,10 @@ sudo chmod 777 /dev/video0
 ```
 cd ~/Downloads/yolov5
 python detect.py --source 0
+```
+4. Deactivate python environment
+```
+deactivate
 ```
 
 ### Activity: YoLo v5 TFLite Model
@@ -351,7 +387,10 @@ pip install tensorflow
 cd ~/Downloads/yolov5
 python detect.py --source 0 --weights lite-model_yolo-v5-tflite_tflite_model_1.tflite --imgsz 320
 ```
-
+5. Deactivate python environment
+```
+deactivate
+```
 
 ### Activity: Tensorflow Image Segmentation with EfficientNet
 1. Activate py39 environment
@@ -366,6 +405,10 @@ sh setup.sh
 3. Run Image Segmentation using Camera
 ```
 python segment.py
+```
+4. Deactivate python environment
+```
+deactivate
 ```
 
 ### Activity: Tensorflow Image Segmentation with MobileNetV2
@@ -382,6 +425,10 @@ curl -L https://github.com/twming/Computer_Vision_NN_Model/raw/Pi5/lite-model_mo
 cd ~/Downloads/examples/lite/examples/image_segmentation/raspberry_pi/
 python segment.py --model lite-model_mobilenetv2-dm05-coco_int8_1.tflite
 ```
+4. Deactivate python environment
+```
+deactivate
+```
 
 ### Activity: YoLo Image Segmentation 
 1. Activate py312 environment
@@ -396,6 +443,10 @@ curl -L https://github.com/twming/Computer_Vision_NN_Model/raw/Pi5/yolov5s-seg.p
 ```
 cd ~/Downloads/yolov5/segment
 python predict.py --source 0 --weights yolov5s-seg.pt
+```
+4. Deactivate python environment
+```
+deactivate
 ```
 
 ### Revision:
