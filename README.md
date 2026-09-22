@@ -117,7 +117,7 @@ sudo chmod 777 /dev/video0
 
 4. Run the capture_video.py
 ```
-python capture_video.py
+python3 capture_video.py
 ```
 
 ### Activity : Saving Video from Camera
@@ -156,7 +156,7 @@ sudo chmod 777 /dev/video0
 
 4. Run the save_video.py
 ```
-python save_video.py
+python3 save_video.py
 ```
 
 - Picamera2 reference
