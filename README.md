@@ -104,7 +104,7 @@ while True:
         break
     gray = cv.cvtColor(frame, cv.COLOR_BGR2GRAY)
     cv.imshow('frame', gray)
-    if cv.waitKey(1) == ord('q'):
+    if cv.waitKey(1) == 27:
         break
 cap.release()
 cv.destroyAllWindows()
@@ -141,7 +141,7 @@ while cap.isOpened():
 
     out.write(frame)
     cv.imshow('frame', frame)
-    if cv.waitKey(1) == ord('q'):
+    if cv.waitKey(1) == 27:
         break
 
 cap.release()
@@ -169,7 +169,7 @@ picam2.start()
 while True:
     image = picam2.capture_array()
     cv2.imshow("Frame", image)
-    if(cv2.waitKey(1) == ord("q")):
+    if(cv2.waitKey(1) == 27):
         cv2.imwrite("test_frame.png", image)
         break
 
@@ -342,7 +342,8 @@ git clone https://github.com/ultralytics/yolov5
 cd yolov5
 pip install -r requirements.txt
 ```
-For Pi4, need extra install below:
+> [!TIP]
+> For Pi4, need extra install below:
 ```
 pip install torch==2.3.1 torchvision==0.18.1
 ```
