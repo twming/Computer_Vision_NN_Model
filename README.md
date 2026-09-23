@@ -180,6 +180,7 @@ source yoloenv/bin/activate
 git clone https://github.com/ultralytics/yolov5
 cd ~/yolo/yolov5
 pip install -r requirements.txt
+pip install torch==2.3.1 torchvision==0.18.1
 ```
 - Run YOLO object detection
 ```
