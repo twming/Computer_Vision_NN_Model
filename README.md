@@ -342,6 +342,11 @@ git clone https://github.com/ultralytics/yolov5
 cd yolov5
 pip install -r requirements.txt
 ```
+For Pi4, need extra install below:
+```
+pip install torch==2.3.1 torchvision==0.18.1
+```
+
 4. Deactivate python environment
 ```
 deactivate
